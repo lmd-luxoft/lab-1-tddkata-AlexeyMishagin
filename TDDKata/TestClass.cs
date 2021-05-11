@@ -16,5 +16,29 @@ namespace TDDKata
             int value = calc.Sum("2,2");
             Assert.That(value, Is.EqualTo(4), "Wrong actual value");
         }
+
+        [Test]
+        public void TestIfLenZero()
+        {
+            StringCalc calc = new StringCalc();
+            int value = calc.Sum("");
+            Assert.That(value, Is.EqualTo(0), "Must be 0");
+        }
+
+        [Test]
+        public void TestIfValueZero()
+        {
+            StringCalc calc = new StringCalc();
+            int value = calc.Sum("0");
+            Assert.That(value, Is.EqualTo(0), "Must be 0");
+        }
+
+        [Test]
+        public void TestIfValueOne()
+        {
+            StringCalc calc = new StringCalc();
+            int value = calc.Sum("1");
+            Assert.That(value, Is.EqualTo(2), "Must be 2");
+        }
     }
 }
