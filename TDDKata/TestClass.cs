@@ -18,6 +18,14 @@ namespace TDDKata
         }
 
         [Test]
+        public void SimpleTest3Value()
+        {
+            StringCalc calc = new StringCalc();
+            int value = calc.Sum("22,2,4");
+            Assert.That(value, Is.EqualTo(28), "Wrong actual value");
+        }
+
+        [Test]
         public void TestIfLenZero()
         {
             StringCalc calc = new StringCalc();
@@ -37,8 +45,8 @@ namespace TDDKata
         public void TestIfValueOne()
         {
             StringCalc calc = new StringCalc();
-            int value = calc.Sum("1");
-            Assert.That(value, Is.EqualTo(2), "Must be 2");
+            int value = calc.Sum("11");
+            Assert.That(value, Is.EqualTo(22), "Must be 2");
         }
     }
 }
