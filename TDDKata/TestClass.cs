@@ -18,10 +18,26 @@ namespace TDDKata
         }
 
         [Test]
+        public void SimpleTestAnotherSplit()
+        {
+            StringCalc calc = new StringCalc();
+            int value = calc.Sum("2\n2");
+            Assert.That(value, Is.EqualTo(4), "Wrong actual value");
+        }
+
+        [Test]
         public void SimpleTest3Value()
         {
             StringCalc calc = new StringCalc();
             int value = calc.Sum("22,2,4");
+            Assert.That(value, Is.EqualTo(28), "Wrong actual value");
+        }
+
+        [Test]
+        public void SimpleTest3ValueAnotherSplit()
+        {
+            StringCalc calc = new StringCalc();
+            int value = calc.Sum("22,2\n4");
             Assert.That(value, Is.EqualTo(28), "Wrong actual value");
         }
 
