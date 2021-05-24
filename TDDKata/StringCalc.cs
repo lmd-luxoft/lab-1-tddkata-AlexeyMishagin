@@ -41,6 +41,12 @@ namespace TDDKata
         private char[] FindSplits (string st)
         {
             StringBuilder retsymbols = new StringBuilder();
+
+            if (st.Contains("//"))
+            {
+                return retsymbols.Append(st.Substring( st.IndexOf("//") + 2 , 1)).ToString().ToCharArray();
+            }
+
             foreach(char ch in st)
             {
                 if (!(ch >= '0' & ch <= '9')) retsymbols.Append(ch);

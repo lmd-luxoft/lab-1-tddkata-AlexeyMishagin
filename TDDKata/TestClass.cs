@@ -64,5 +64,13 @@ namespace TDDKata
             int value = calc.Sum("11");
             Assert.That(value, Is.EqualTo(22), "Must be 2");
         }
+
+        [Test]
+        public void TestDifferentSplit()
+        {
+            StringCalc calc = new StringCalc();
+            int value = calc.Sum("//;\n2;5;3");
+            Assert.That(value, Is.EqualTo(10), "Must be 10");
+        }
     }
 }
